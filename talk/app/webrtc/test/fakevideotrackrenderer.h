@@ -54,8 +54,8 @@ class FakeVideoTrackRenderer : public VideoRendererInterface {
     fake_renderer_.RenderFrame(frame);
   }
 
-  bool SetCropping(float left, float right, float bottom, float top) {}
-  bool TakeScreenshotRGB24(const uint8_t ** buffer, uint32_t * width, uint32_t * height) {}
+  bool SetCropping(float left, float right, float bottom, float top) { return false; }
+  bool TakeScreenshotRGB24(const uint8_t ** buffer, uint32_t * width, uint32_t * height) { return false; }
 
   int errors() const { return fake_renderer_.errors(); }
   int width() const { return fake_renderer_.width(); }

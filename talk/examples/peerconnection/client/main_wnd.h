@@ -134,7 +134,11 @@ class MainWnd : public MainWindow {
 
     // VideoRendererInterface implementation
     virtual void SetSize(int width, int height);
-    virtual void RenderFrame(const cricket::VideoFrame* frame);
+    virtual void RenderFrame(const  webrtc::I420VideoFrame* frame);
+    // Change cropping
+    virtual bool SetCropping(float left, float right, float bottom, float top) { return false; }
+    // Take screenshot in RGB format and return a pointer to an internal array.
+    virtual bool TakeScreenshotRGB24(const uint8_t ** buffer, uint32_t * width, uint32_t * height) { return false; }
 
     const BITMAPINFO& bmi() const { return bmi_; }
     const uint8* image() const { return image_.get(); }
