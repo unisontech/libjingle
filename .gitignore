@@ -11,3 +11,8 @@ tools/python/
 tools/valgrind/
 tools/win/
 
+*.vcxproj*
+*.sln
+*.ipch
+*.sdf
+*.suo
