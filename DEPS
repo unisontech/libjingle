@@ -10,11 +10,13 @@ vars = {
   "chromium_trunk" : "http://src.chromium.org/svn/trunk",
   "chromium_git": "https://chromium.googlesource.com",
   "webrtc_git": "https://github.com/xhook/webrtc.git",
+  "libyuv_git": "https://github.com/xhook/libyuv.git",
 
   "chromium_revision": "187216",
   "webrtc_revision": "3742",
 
   "webrtc_hash": "@83ee428a51ee02fbed2d553391ef843d99104c16",
+  "libyuv_hash": "@766cc3c536ec15a0391d885277b4978531e1a0a7",
 }
 
 # NOTE: Prefer revision numbers to tags for svn deps. Use http rather than
@@ -64,7 +66,7 @@ deps = {
     From("chromium_deps", "src/third_party/libvpx"),
 
   "third_party/libyuv/":
-    From("chromium_deps", "src/third_party/libyuv"),
+    Var("libyuv_git") + Var("libyuv_hash")
 
   "third_party/opus":
     Var("chromium_trunk") + "/src/third_party/opus@163910",
