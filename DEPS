@@ -66,7 +66,7 @@ deps = {
     From("chromium_deps", "src/third_party/libvpx"),
 
   "third_party/libyuv/":
-    Var("libyuv_git") + Var("libyuv_hash")
+    Var("libyuv_git") + Var("libyuv_hash"),
 
   "third_party/opus":
     Var("chromium_trunk") + "/src/third_party/opus@163910",
